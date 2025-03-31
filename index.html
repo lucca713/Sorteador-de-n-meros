@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sorteador de Números</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>NUMBERS</h1>
-            <p>ONLINE - GRATUITO</p>
-        </header>
-        <main>
-            <h2>SORTEADOR DE NÚMEROS</h2>
-            <p class="descricao">Defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
+        <div class="left-section">
+            <h1 class="title">SORTEADOR DE NÚMEROS</h1>
+            <div class="info">
+                <p><strong>Como funciona o sorteador de números?</strong><br>
+                O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
+                <p><strong>Posso escolher o intervalo dos números?</strong><br>
+                Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.</p>
+            </div>
+        </div>
+        <div class="right-section">
+            <p>QUERO SORTEAR:</p>
             <div class="input-group">
-                <label for="quantidade">NÚMEROS</label>
-                <input type="number" id="quantidade" value="2" min="1">
-                <label for="min">DE</label>
-                <input type="number" id="min" value="1">
-                <label for="max">DE</label>
-                <input type="number" id="max" value="100">
+                <input id="qtd_choice" type="number" placeholder="N" min="1">
+                <input type="number" placeholder="Min" min="0">
+                <input type="number" placeholder="Max" min="1">
             </div>
             <div class="toggle">
-                <input type="checkbox" id="repetir">
-                <label for="repetir">Não repetir número</label>
+                <input type="checkbox" id="no-repeat">
+                <label for="no-repeat">Não repetir número</label>
             </div>
-            <button class="botao">SORTEAR →</button>
-        </main>
-        <footer>
-            <h3>Como funciona o sorteador de números?</h3>
-            <p>O sorteador utiliza um algoritmo de geração aleatória para criar números dentro do intervalo especificado pelo usuário.</p>
-            <h3>Posso escolher o intervalo dos números?</h3>
-            <p>Sim, você pode definir os valores mínimo e máximo para o intervalo dos números sorteados.</p>
-        </footer>
+            <button>SORTEAR →</button>
+        </div>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
