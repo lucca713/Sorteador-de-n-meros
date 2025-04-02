@@ -4,32 +4,47 @@ let min_number = document.querySelector("#min")
 let max_number = document.querySelector("#max")
 const show_number = document.querySelector("#show_number")
 const button = document.querySelector("button")
-let max_number1
-qtd_choice.oninput = () =>{
-   console.log(qtd_choice.value)
-}
+let max_number1, min_number1
 
-min_number.oninput = () =>{
-   min_number = Number(min_number.value)  
-}
 
-max_number.oninput = () =>{
-   max_number1 = Number(max_number.value)
-   
-}
+//inicio input
+   qtd_choice.oninput = () =>{
+      console.log(qtd_choice.value)
+   }
 
-console.log(max_number1)
+   min_number.oninput = () =>{
+      min_number1 = Number(min_number.value)  
+   }
 
-//funcao para pegar numeros randoon
+   max_number.oninput = () =>{
+      max_number1 = Number(max_number.value)
+   }
+//fim input
 
-function getRandonNumber(min,max){
-   Math.floor(Math.random(), (min - max + 1)) + min
-}
+//funcao aonde gera o numero na tela
+   button.onclick = () => {
+      try{  
+         let resultado = getRandonNumber(min_number1, max_number1)
 
-button.onclick = () => {
-   show_number.innerHTML = getRandonNumber(min_number, max_number)
-}
+         if(isNaN(resultado)){
+            throw new Error("voce nao digitou nenhum numero")
+         }
+         
+         show_number.innerHTML = resultado
 
-qtd_choice.addEventListener("click", function() {
-   console.log(qtd_choice.textContent)
-  });
+      }catch(error){
+         alert(error.message)
+      } 
+   }
+//fim funcao aonde gera numero na tela
+
+
+//funcao para gera numeros randoon
+   function getRandonNumber(min,max){
+
+   return Math.floor(Math.random() * (min - max + 1)) + min
+   }
+//fim funcao que gera numero na tela
+
+
+
